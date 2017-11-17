@@ -1,0 +1,117 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="idman, idman xəbərləri, idman tədbirləri, idman zalları, idman malları">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>İdman xəbərləri</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Plugins -->
+<link href="assets/plugin/owl-carousel/dist/assets/owl.carousel.css" rel="stylesheet">
+<link href="assets/plugin/owl-carousel/dist/assets/owl.theme.default.css" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fa/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Oswald&text=%21%22%23%24%25%26%27%28%29%30+,-./0123456789:;%3C=%3E%3F@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`%E2%82%AC„‘’“”™©®°µ±÷abcdefghijklmnopqrstuvwxyz{|}~%C3%9C%C3%96%C4%9E%C4%B0%C6%8F%C3%87%C5%9E%C3%BC%C3%B6%C4%9F%C4%B1%C9%99%C3%A7%C5%9F"
+      rel="stylesheet">
+<!-- Main Css -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/media.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="~/Content/js/html5.js"></script>
+  <![endif]-->
+@RenderSection("head", required: false)
+</head>
+<body >
+    <!--[if lte IE 8]><div id="ie_message"><div class="wrapper"><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="~Content/images/banner_ie.png" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/></a></div></div><![endif]-->
+   
+        <!-- header -->
+        <!--HEADER-->
+        <header>
+            <nav class="navbar navbar-default topBanner">
+                <div class="container topContainer">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand topLogo" href="./"><img src="assets/img/logo.png" alt=""></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav topNav">
+                            <li class="dropdown topMenuItem">
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Xəbərlər <span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="drop-menu">
+                                    <li id="futbol">#Futbol</li>
+                                    <li id="voleybol">#Voleybol</li>
+                                    <li id="gules">#Güləş </li>
+                                    <li id="boks">#Boks</li>
+                                    <li id="cudo">#Cüdo</li>
+                                    <li id="diger">#Digər</li>
+                                </ul>
+                            </li>
+                            <li class="topMenuItem"><a href="meqale">Məqalələr</a></li>
+                            <li class="topMenuItem"><a href="tedbir">Tədbirlər</a></li>
+                            <li class="topMenuItem"><a href="elan">Elanlar</a></li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </nav>
+        </header>
+        <!--HEADER END-->
+
+        @RenderBody()
+        <div id="scroll_to_top_wrapper">
+            <div class="wrapper"><a href="#" id="scroll_to_top">Yuxarı qayıt</a></div>
+        </div>
+        <!-- footer -->
+        <footer>
+            <div class="region">
+                <div id="block_footer_menu" class="block">
+                    <nav>
+                        <ul>
+                            <li class="first active"><a href="index.html">Ana səhifə</a></li>
+                            <li><a href="fullwidth.html">Pages</a></li>
+                            <li><a href="typography.html">Features</a></li>
+                            <li><a href="gallery_3columns.html">Gallery</a></li>
+                            <li><a href="#">World</a></li>
+                            <li><a href="#">U.S.</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Sports</a></li>
+                            <li><a href="#">Entertainment</a></li>
+                            <li><a href="#">Health</a></li>
+                            <li><a href="#">Tech</a></li>
+                            <li><a href="#">Weather</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="sitemap.html">Site Map</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="block_copyright" class="block">
+                    <p>Copyright &copy; İdmanist 2017.  All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <!-- end footer -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+﻿@model Idmanist.Web.ViewModels.ProdInViewModel
+
+<nav>
+    <div class="container">
+        <div class="nav-inner">
+      @if (Model != null)
+      {
+        <ul id="nav" class="hidden-xs">
+            @foreach (var category in Model.Categories)
+                {
+                <li id="nav-home" class="level0 parent drop-menu">
+                    <a href="@Url.Action("AllProducts", "Product", new {id=category.CategoryId,page=1})">@category.CategoryName</a>
+                </li>
+            }
+        </ul>
+      }
+               
+
+            
+        </div>
+    </div>
+</nav>

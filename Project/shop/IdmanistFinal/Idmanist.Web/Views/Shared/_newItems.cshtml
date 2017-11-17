@@ -1,0 +1,104 @@
+﻿
+@model Idmanist.Web.ViewModels.ProdInViewModel
+   
+<section class="main-container col1-layout home-content-container">
+    <div class="container">
+        <div class="std">
+            <div class="best-seller-pro wow bounceInUp animated">
+                <div class="slider-items-products">
+                    <div class="new_title center">
+                        <h2>Ən çox satılanlar</h2>
+                    </div>
+                    <div id="best-seller-slider" class="product-flexslider hidden-buttons">
+                        <div class="slider-items slider-width-col4">
+                           @foreach (var product in Model.Products)
+                           {
+                               var productFirstImage = product.ProductImages.FirstOrDefault();
+                                <!-- Item -->
+                            <div class="item">
+                                <div class="col-item">
+                                    <div class="sale-label sale-top-right">Sale</div>
+                                    <div  class="product-image-area">
+                                        <a class="product-image" title="Sample Product" href="@Url.Action("Index","Product", new { id= product.ProductId})"> 
+                                            @if (productFirstImage != null)
+                                            {
+                                        <img  src="@string.Format("data: {0}; base64, {1} ", product.ProductImages.FirstOrDefault().ContentType, Convert.ToBase64String(product.ProductImages.FirstOrDefault().Content))" class="img-responsive" alt="product-image" />
+                                            }
+                                            else
+                                            {
+                                                <img src="~/Content/images/No-image-found.jpg" class="img-responsive" alt="product-image" />
+                                            }
+
+                                        </a>
+                                        <div class="hover_fly">
+                                            <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
+                                                <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
+                                            </a> <a class="quick-view" href="quick_view.html">
+                                                <div><i class="icon-eye-open"></i><span>Quick view</span></div>
+                                            </a> <a class="add_to_compare" href="compare.html">
+                                                <div><i class="icon-random"></i><span>Add to compare</span></div>
+                                            </a> 
+                                            
+                                            @{
+                                                IdmanistData.Model.Customer thisuser = (IdmanistData.Model.Customer)(Session["user"]);
+
+                                                if (Session["user"] == null)
+                                                {
+                                                    <a class="addToWishlist wishlistProd_5" data-id="@product.ProductId" href="#">
+                                                        <i class="fa fa-heart-o fa-lg"></i><span>@product.mywishes  </span>
+                                                    </a>
+
+                                                }
+                                                else if (new List<dynamic>(Model.wishesss).FirstOrDefault(a => a.customer_id == thisuser.UserID && a.product_id == product.ProductId) != null || Ajax.ViewBag.wished == true)
+                                                {
+
+                                                    <a class="addToWishlist wishlistProd_5 unlike" data-id="@product.ProductId" href="javascript:void(0)">
+                                                       <i class="fa fa-heart fa-lg text-danger"></i><span>@product.mywishes  </span>
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <a class="addToWishlist wishlistProd_5 like"  data-id="@product.ProductId" href="javascript:void(0)">
+                                                        <i class="fa fa-heart-o fa-lg"></i><span>@product.mywishes Add to Wishlist </span>
+                                                    </a>
+                                                }
+                                            }
+ 
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <div class="info-inner">
+                                            <div class="item-title"> <a title=" Sample Product" href="#"> @Html.ActionLink(product.ProductName, "Index", "Product", new { id = product.ProductId }, new { }) </a> </div>
+                                            <!--item-title-->
+                                            <div class="item-content">
+                                                <div class="ratings">
+                                                    <div class="rating-box">
+                                                        <div class="rating"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="price-box">
+                                                    <p class="special-price"> <span class="price"> @product.Product_Price </span> </p>
+                                                    @*<p class="old-price"> <span class="price-sep">-</span> <span class="price"> @product.Product_Price </span> </p>*@
+                                                </div>
+                                            </div>
+                                            <!--item-content-->
+                                        </div>
+                                        <!--info-inner-->
+
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Item -->
+                           }
+                           
+                           
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
